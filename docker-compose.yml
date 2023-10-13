@@ -1,0 +1,10 @@
+version: '3.11'
+
+services:
+  django:
+    image: hello-world
+    build: .
+    command: ["gunicorn", "hello_world.wsgi:application", "--bind", "0.0.0.0:8000"]
+    ports:
+      - "8000:8000"
+
